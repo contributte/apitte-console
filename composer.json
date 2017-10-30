@@ -1,0 +1,8 @@
+{
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "apitte/core": "^0.1.0@dev",
+    "symfony/console": "^3.3"
+  }
+}
