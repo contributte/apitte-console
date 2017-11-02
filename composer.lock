@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "464c55da04c804da9988026c5b1a9850",
+    "content-hash": "9a8f4890989f95f24b59893427f6611d",
     "packages": [
         {
             "name": "apitte/core",
@@ -987,7 +987,692 @@
             "time": "2017-10-11T12:05:26+00:00"
         }
     ],
-    "packages-dev": [],
+    "packages-dev": [
+        {
+            "name": "apitte/mapping",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/apitte/mapping.git",
+                "reference": "9a153b21c8b0dd1728f811f3317a4e8597a29cce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/apitte/mapping/zipball/9a153b21c8b0dd1728f811f3317a4e8597a29cce",
+                "reference": "9a153b21c8b0dd1728f811f3317a4e8597a29cce",
+                "shasum": ""
+            },
+            "require": {
+                "apitte/core": "^0.1.0",
+                "php": ">= 5.6"
+            },
+            "require-dev": {
+                "ninjify/nunjuck": "^0.2.0",
+                "ninjify/qa": "^0.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Apitte\\Mapping\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Milan Felix Šulc",
+                    "homepage": "https://f3l1x.io"
+                }
+            ],
+            "description": "Request mappers, transformers and decorators for Apitte stack",
+            "homepage": "https://github.com/apitte/mapping",
+            "keywords": [
+                "api",
+                "apitte",
+                "decorators",
+                "mapping",
+                "transformers"
+            ],
+            "time": "2017-10-25T14:07:38+00:00"
+        },
+        {
+            "name": "apitte/middlewares",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/apitte/middlewares.git",
+                "reference": "b4c6c272e8460eaf319ded6c3d131647aac1808f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/apitte/middlewares/zipball/b4c6c272e8460eaf319ded6c3d131647aac1808f",
+                "reference": "b4c6c272e8460eaf319ded6c3d131647aac1808f",
+                "shasum": ""
+            },
+            "require": {
+                "apitte/core": "^0.1.0",
+                "contributte/middlewares": "^0.4.0",
+                "php": ">= 5.6"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.9",
+                "ninjify/nunjuck": "^0.2.0",
+                "ninjify/qa": "^0.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Apitte\\Middlewares\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Milan Felix Šulc",
+                    "homepage": "https://f3l1x.io"
+                }
+            ],
+            "description": "Middlewares support for Apitte stack",
+            "homepage": "https://github.com/apitte/middlewares",
+            "keywords": [
+                "Relay",
+                "api",
+                "apitte",
+                "middlewares"
+            ],
+            "time": "2017-10-14T10:04:56+00:00"
+        },
+        {
+            "name": "apitte/negotiation",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/apitte/negotiation.git",
+                "reference": "cf4b2af24f6ba8049dc2a4254d8ac1d98aa66ffe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/apitte/negotiation/zipball/cf4b2af24f6ba8049dc2a4254d8ac1d98aa66ffe",
+                "reference": "cf4b2af24f6ba8049dc2a4254d8ac1d98aa66ffe",
+                "shasum": ""
+            },
+            "require": {
+                "apitte/core": "^0.1.0",
+                "apitte/mapping": "^0.1.0",
+                "apitte/middlewares": "^0.1.0",
+                "php": ">= 5.6"
+            },
+            "require-dev": {
+                "ninjify/nunjuck": "^0.2.0",
+                "ninjify/qa": "^0.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Apitte\\Negotiation\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Milan Felix Šulc",
+                    "homepage": "https://f3l1x.io"
+                }
+            ],
+            "description": "Content-Negotiation support for Apitte stack",
+            "homepage": "https://github.com/apitte/negotiation",
+            "keywords": [
+                "apitte",
+                "content-negotiation",
+                "negotiation",
+                "view-resolver"
+            ],
+            "time": "2017-10-25T14:13:11+00:00"
+        },
+        {
+            "name": "contributte/middlewares",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/contributte/middlewares.git",
+                "reference": "16b7399f0fee577a87759005166b4b5abdca9681"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/contributte/middlewares/zipball/16b7399f0fee577a87759005166b4b5abdca9681",
+                "reference": "16b7399f0fee577a87759005166b4b5abdca9681",
+                "shasum": ""
+            },
+            "require": {
+                "contributte/psr7-http-message": "~0.3.0",
+                "php": ">= 5.6"
+            },
+            "require-dev": {
+                "nette/application": "~2.4.9",
+                "nette/di": "~2.4.10",
+                "nette/http": "~2.4.7",
+                "ninjify/nunjuck": "~0.2.0",
+                "ninjify/qa": "~0.4.0",
+                "tracy/tracy": "~2.4.9"
+            },
+            "suggest": {
+                "nette/application": "to use PresenterMiddleware",
+                "nette/di": "to use CompilerExtension(NetteMiddlewareExtension | StandaloneMiddlewareExtension)",
+                "nette/http": "to use NetteMiddlewareExtension & NetteMiddlewareApplication",
+                "tracy/tracy": "to use TracyMiddleware"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Contributte\\Middlewares\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Milan Felix Sulc",
+                    "homepage": "https://f3l1x.io"
+                }
+            ],
+            "description": "Middleware / Relay / PSR-7 support to Nette Framework",
+            "homepage": "https://github.com/contributte/middlewares",
+            "keywords": [
+                "Relay",
+                "middleware",
+                "nette"
+            ],
+            "time": "2017-10-16T09:32:41+00:00"
+        },
+        {
+            "name": "jakub-onderka/php-console-color",
+            "version": "0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JakubOnderka/PHP-Console-Color.git",
+                "reference": "e0b393dacf7703fc36a4efc3df1435485197e6c1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JakubOnderka/PHP-Console-Color/zipball/e0b393dacf7703fc36a4efc3df1435485197e6c1",
+                "reference": "e0b393dacf7703fc36a4efc3df1435485197e6c1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "jakub-onderka/php-code-style": "1.0",
+                "jakub-onderka/php-parallel-lint": "0.*",
+                "jakub-onderka/php-var-dump-check": "0.*",
+                "phpunit/phpunit": "3.7.*",
+                "squizlabs/php_codesniffer": "1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "JakubOnderka\\PhpConsoleColor": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jakub Onderka",
+                    "email": "jakub.onderka@gmail.com",
+                    "homepage": "http://www.acci.cz"
+                }
+            ],
+            "time": "2014-04-08T15:00:19+00:00"
+        },
+        {
+            "name": "jakub-onderka/php-console-highlighter",
+            "version": "v0.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JakubOnderka/PHP-Console-Highlighter.git",
+                "reference": "7daa75df45242c8d5b75a22c00a201e7954e4fb5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JakubOnderka/PHP-Console-Highlighter/zipball/7daa75df45242c8d5b75a22c00a201e7954e4fb5",
+                "reference": "7daa75df45242c8d5b75a22c00a201e7954e4fb5",
+                "shasum": ""
+            },
+            "require": {
+                "jakub-onderka/php-console-color": "~0.1",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "jakub-onderka/php-code-style": "~1.0",
+                "jakub-onderka/php-parallel-lint": "~0.5",
+                "jakub-onderka/php-var-dump-check": "~0.1",
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "~1.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "JakubOnderka\\PhpConsoleHighlighter": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jakub Onderka",
+                    "email": "acci@acci.cz",
+                    "homepage": "http://www.acci.cz/"
+                }
+            ],
+            "time": "2015-04-20T18:58:01+00:00"
+        },
+        {
+            "name": "jakub-onderka/php-parallel-lint",
+            "version": "v0.9.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JakubOnderka/PHP-Parallel-Lint.git",
+                "reference": "2ead2e4043ab125bee9554f356e0a86742c2d4fa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JakubOnderka/PHP-Parallel-Lint/zipball/2ead2e4043ab125bee9554f356e0a86742c2d4fa",
+                "reference": "2ead2e4043ab125bee9554f356e0a86742c2d4fa",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "jakub-onderka/php-console-highlighter": "~0.3",
+                "nette/tester": "~1.3"
+            },
+            "suggest": {
+                "jakub-onderka/php-console-highlighter": "Highlight syntax in code snippet"
+            },
+            "bin": [
+                "parallel-lint"
+            ],
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "./"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jakub Onderka",
+                    "email": "jakub.onderka@gmail.com"
+                }
+            ],
+            "description": "This tool check syntax of PHP files about 20x faster than serial check.",
+            "homepage": "https://github.com/JakubOnderka/PHP-Parallel-Lint",
+            "time": "2015-12-15T10:42:16+00:00"
+        },
+        {
+            "name": "nette/tester",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nette/tester.git",
+                "reference": "ee0ad514d66409037a0e72fe798112fd8cdae92e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nette/tester/zipball/ee0ad514d66409037a0e72fe798112fd8cdae92e",
+                "reference": "ee0ad514d66409037a0e72fe798112fd8cdae92e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "bin": [
+                "src/tester"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause",
+                "GPL-2.0",
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "David Grudl",
+                    "homepage": "https://davidgrudl.com"
+                },
+                {
+                    "name": "Nette Community",
+                    "homepage": "https://nette.org/contributors"
+                }
+            ],
+            "description": "Nette Tester: enjoyable unit testing in PHP with code coverage reporter. 🍏🍏🍎🍏",
+            "homepage": "https://tester.nette.org",
+            "keywords": [
+                "Xdebug",
+                "assertions",
+                "clover",
+                "code coverage",
+                "nette",
+                "phpdbg",
+                "phpunit",
+                "testing",
+                "unit"
+            ],
+            "time": "2017-08-22T06:46:57+00:00"
+        },
+        {
+            "name": "ninjify/coding-standard",
+            "version": "0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ninjify/coding-standard.git",
+                "reference": "e75acc05cfd3fede2761fca890354df13880d730"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ninjify/coding-standard/zipball/e75acc05cfd3fede2761fca890354df13880d730",
+                "reference": "e75acc05cfd3fede2761fca890354df13880d730",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6",
+                "slevomat/coding-standard": "^1.1.1",
+                "squizlabs/php_codesniffer": "^2.7.0"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Milan Felix Sulc",
+                    "homepage": "https://jfx.cz"
+                }
+            ],
+            "description": "Tuned & very strict coding standards for PHP projects",
+            "homepage": "https://github.com/ninjify/coding-standard",
+            "keywords": [
+                "codesniffer",
+                "php",
+                "strict"
+            ],
+            "time": "2016-11-21T15:04:51+00:00"
+        },
+        {
+            "name": "ninjify/nunjuck",
+            "version": "v0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ninjify/nunjuck.git",
+                "reference": "96b6547816569eb49b792d05d72af9f026bf697e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ninjify/nunjuck/zipball/96b6547816569eb49b792d05d72af9f026bf697e",
+                "reference": "96b6547816569eb49b792d05d72af9f026bf697e",
+                "shasum": ""
+            },
+            "require": {
+                "nette/tester": "~2.0.0",
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "ninjify/qa": "^0.4.0"
+            },
+            "suggest": {
+                "janmarek/mockista": "to use BaseMockistaTestCase",
+                "mockery/mockery": "to use BaseMockeryTestCase",
+                "nette/di": "to use BaseContainerTestCase"
+            },
+            "bin": [
+                "bin/nunjuck",
+                "bin/nunjuck-setup"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ninjify\\Nunjuck\\": "src"
+                },
+                "files": [
+                    "bin/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Milan Felix Sulc",
+                    "homepage": "https://f3l1x.io"
+                }
+            ],
+            "description": "Special tuned version of nette/tester for your PHP projects",
+            "homepage": "https://github.com/ninjify/nunjuck",
+            "keywords": [
+                "nette",
+                "php",
+                "tester"
+            ],
+            "time": "2017-08-24T07:47:43+00:00"
+        },
+        {
+            "name": "ninjify/qa",
+            "version": "0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ninjify/qa.git",
+                "reference": "6f204364e47418ae35c6b21c5e865b60f4331719"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ninjify/qa/zipball/6f204364e47418ae35c6b21c5e865b60f4331719",
+                "reference": "6f204364e47418ae35c6b21c5e865b60f4331719",
+                "shasum": ""
+            },
+            "require": {
+                "jakub-onderka/php-console-highlighter": "^0.3.2",
+                "jakub-onderka/php-parallel-lint": "^0.9.2",
+                "ninjify/coding-standard": "~0.2.1",
+                "php": ">=5.6"
+            },
+            "bin": [
+                "bin/codesniffer",
+                "bin/codefixer",
+                "bin/linter"
+            ],
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Milan Felix Sulc",
+                    "homepage": "https://jfx.cz"
+                }
+            ],
+            "description": "Quality assurance for your PHP projects",
+            "homepage": "https://github.com/ninjify/qa",
+            "keywords": [
+                "assurance",
+                "codesniffer",
+                "linter",
+                "nette",
+                "php",
+                "quality"
+            ],
+            "time": "2017-06-09T15:47:33+00:00"
+        },
+        {
+            "name": "slevomat/coding-standard",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/slevomat/coding-standard.git",
+                "reference": "53c24d3fa620dadc832b6d297f11d908835af97f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/slevomat/coding-standard/zipball/53c24d3fa620dadc832b6d297f11d908835af97f",
+                "reference": "53c24d3fa620dadc832b6d297f11d908835af97f",
+                "shasum": ""
+            },
+            "require": {
+                "jakub-onderka/php-parallel-lint": "^0.9.2",
+                "php": "^5.6|^7.0",
+                "squizlabs/php_codesniffer": "^2.6.0"
+            },
+            "require-dev": {
+                "consistence/coding-standard": "^0.11.0",
+                "phing/phing": "^2.9",
+                "phpstan/phpstan": "0.1",
+                "phpunit/phpunit": "^5.0",
+                "satooshi/php-coveralls": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SlevomatCodingStandard\\": "SlevomatCodingStandard"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Slevomat Coding Standard for PHP_CodeSniffer extends Consistence Coding Standard by providing sniffs with additional checks.",
+            "time": "2016-08-10T15:35:53+00:00"
+        },
+        {
+            "name": "squizlabs/php_codesniffer",
+            "version": "2.9.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
+                "reference": "dcbed1074f8244661eecddfc2a675430d8d33f62"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/dcbed1074f8244661eecddfc2a675430d8d33f62",
+                "reference": "dcbed1074f8244661eecddfc2a675430d8d33f62",
+                "shasum": ""
+            },
+            "require": {
+                "ext-simplexml": "*",
+                "ext-tokenizer": "*",
+                "ext-xmlwriter": "*",
+                "php": ">=5.1.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "bin": [
+                "scripts/phpcs",
+                "scripts/phpcbf"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "CodeSniffer.php",
+                    "CodeSniffer/CLI.php",
+                    "CodeSniffer/Exception.php",
+                    "CodeSniffer/File.php",
+                    "CodeSniffer/Fixer.php",
+                    "CodeSniffer/Report.php",
+                    "CodeSniffer/Reporting.php",
+                    "CodeSniffer/Sniff.php",
+                    "CodeSniffer/Tokens.php",
+                    "CodeSniffer/Reports/",
+                    "CodeSniffer/Tokenizers/",
+                    "CodeSniffer/DocGenerators/",
+                    "CodeSniffer/Standards/AbstractPatternSniff.php",
+                    "CodeSniffer/Standards/AbstractScopeSniff.php",
+                    "CodeSniffer/Standards/AbstractVariableSniff.php",
+                    "CodeSniffer/Standards/IncorrectPatternException.php",
+                    "CodeSniffer/Standards/Generic/Sniffs/",
+                    "CodeSniffer/Standards/MySource/Sniffs/",
+                    "CodeSniffer/Standards/PEAR/Sniffs/",
+                    "CodeSniffer/Standards/PSR1/Sniffs/",
+                    "CodeSniffer/Standards/PSR2/Sniffs/",
+                    "CodeSniffer/Standards/Squiz/Sniffs/",
+                    "CodeSniffer/Standards/Zend/Sniffs/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Greg Sherwood",
+                    "role": "lead"
+                }
+            ],
+            "description": "PHP_CodeSniffer tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.",
+            "homepage": "http://www.squizlabs.com/php-codesniffer",
+            "keywords": [
+                "phpcs",
+                "standards"
+            ],
+            "time": "2017-05-22T02:43:20+00:00"
+        }
+    ],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
@@ -995,6 +1680,8 @@
     },
     "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": ">= 5.6"
+    },
     "platform-dev": []
 }

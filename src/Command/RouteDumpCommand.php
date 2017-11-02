@@ -25,6 +25,9 @@ class RouteDumpCommand extends Command
 	 */
 	private $schema;
 
+	/**
+	 * @return void
+	 */
 	protected function configure()
 	{
 		$this->setName('route:dump');
@@ -63,6 +66,7 @@ class RouteDumpCommand extends Command
 
 	/**
 	 * @param \Symfony\Component\Console\Output\OutputInterface $output
+	 * @return void
 	 */
 	public function printEndpointsTable(OutputInterface $output)
 	{
@@ -84,7 +88,7 @@ class RouteDumpCommand extends Command
 
 			foreach ($handler as $endpoint) {
 				$table->addRow([
-					$endpoint->getMethods()[0],
+					\implode('|', $endpoint->getMethods()),
 					$endpoint->getMask(),
 					\sprintf(
 						'%s::%s()',
