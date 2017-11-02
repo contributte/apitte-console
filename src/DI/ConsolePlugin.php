@@ -13,6 +13,7 @@ use Apitte\Core\DI\Plugin\PluginCompiler;
  */
 class ConsolePlugin extends AbstractPlugin
 {
+
 	const PLUGIN_NAME = 'console';
 
 	/**
@@ -24,12 +25,15 @@ class ConsolePlugin extends AbstractPlugin
 		$this->name = self::PLUGIN_NAME;
 	}
 
+	/**
+	 * @return void
+	 */
 	public function beforePluginCompile()
 	{
 		$builder = $this->getContainerBuilder();
 
 		$builder->addDefinition($this->prefix('console'))
-			->setFactory(RouteDumpCommand::class)
-			->addTag('kdyby.console.command');
+			->setFactory(RouteDumpCommand::class);
 	}
+
 }
