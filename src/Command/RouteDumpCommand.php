@@ -15,7 +15,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 /**
  * Class RouteDumpCommand
  */
-class RouteDumpCommand extends Command
+final class RouteDumpCommand extends Command
 {
 
 	const TABLE_HEADER = ['Method', 'Path', 'Handler', 'Parameters'];
@@ -82,15 +82,15 @@ class RouteDumpCommand extends Command
 
 		foreach ($endpointsByHandler as $handler) {
 
-			\usort($handler, function (Endpoint $first, Endpoint $second) {
-				return \strlen($first->getMask()) - \strlen($second->getMask());
+			usort($handler, function (Endpoint $first, Endpoint $second) {
+				return strlen($first->getMask()) - strlen($second->getMask());
 			});
 
 			foreach ($handler as $endpoint) {
 				$table->addRow([
-					\implode('|', $endpoint->getMethods()),
+					implode('|', $endpoint->getMethods()),
 					$endpoint->getMask(),
-					\sprintf(
+					sprintf(
 						'%s::%s()',
 						$endpoint->getHandler()->getClass(),
 						$endpoint->getHandler()->getMethod()
@@ -99,7 +99,7 @@ class RouteDumpCommand extends Command
 				]);
 			}
 
-			if ($handler !== \end($endpointsByHandler)) {
+			if ($handler !== end($endpointsByHandler)) {
 				$table->addRow(new TableSeparator());
 			}
 		}
@@ -113,11 +113,11 @@ class RouteDumpCommand extends Command
 	 */
 	private function formatParameters(array $parameters)
 	{
-		$params = \array_map(function (EndpointParameter $parameter) {
-			return \sprintf('%s (%s)', $parameter->getName(), $parameter->getType());
+		$params = array_map(function (EndpointParameter $parameter) {
+			return sprintf('%s (%s)', $parameter->getName(), $parameter->getType());
 		}, $parameters);
 
-		return \implode(', ', $params);
+		return implode(', ', $params);
 	}
 
 }

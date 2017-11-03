@@ -11,7 +11,7 @@ use Apitte\Core\DI\Plugin\PluginCompiler;
  *
  * @package Apitte\Console\DI
  */
-class ConsolePlugin extends AbstractPlugin
+final class ConsolePlugin extends AbstractPlugin
 {
 
 	const PLUGIN_NAME = 'console';
