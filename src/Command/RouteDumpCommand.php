@@ -12,18 +12,23 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
-/**
- * Class RouteDumpCommand
- */
 final class RouteDumpCommand extends Command
 {
 
 	const TABLE_HEADER = ['Method', 'Path', 'Handler', 'Parameters'];
 
-	/**
-	 * @var \Apitte\Core\Schema\Schema
-	 */
+	/** @var Schema */
 	private $schema;
+
+	/**
+	 * @param Schema $schema
+	 */
+	public function __construct(Schema $schema)
+	{
+		parent::__construct();
+
+		$this->schema = $schema;
+	}
 
 	/**
 	 * @return void
@@ -33,18 +38,6 @@ final class RouteDumpCommand extends Command
 		$this->setName('route:dump');
 		$this->setAliases(['route:list', 'endpoint:dump', 'endpoint:list', 'schema:dump']);
 		$this->setDescription('Lists all endpoints registered in application');
-	}
-
-	/**
-	 * RouteDumpCommand constructor.
-	 *
-	 * @param \Apitte\Core\Schema\Schema $schema
-	 */
-	public function __construct(Schema $schema)
-	{
-		parent::__construct();
-
-		$this->schema = $schema;
 	}
 
 	/**
@@ -59,17 +52,6 @@ final class RouteDumpCommand extends Command
 
 		$io->title('All registered endpoints');
 
-		$this->printEndpointsTable($output);
-
-		return 0;
-	}
-
-	/**
-	 * @param \Symfony\Component\Console\Output\OutputInterface $output
-	 * @return void
-	 */
-	public function printEndpointsTable(OutputInterface $output)
-	{
 		$table = new Table($output);
 		$table->setHeaders(self::TABLE_HEADER);
 
@@ -105,6 +87,8 @@ final class RouteDumpCommand extends Command
 		}
 
 		$table->render();
+
+		return 0;
 	}
 
 	/**
