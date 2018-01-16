@@ -30,4 +30,11 @@ composer require apitte/console
 
 ---
 
+
+## Documentation
+
+- [Installation - how to register a plugin](https://github.com/apitte/console/tree/master/.docs#installation)
+- [Configuration - all options](https://github.com/apitte/console/tree/master/.docs#configuration)
+- [Usage - controller showtime](https://github.com/apitte/console/tree/master/.docs#usage)
+
 Thank you for testing, reporting and contributing.
