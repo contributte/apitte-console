@@ -35,8 +35,7 @@ final class RouteDumpCommand extends Command
 	 */
 	protected function configure()
 	{
-		$this->setName('route:dump');
-		$this->setAliases(['route:list', 'endpoint:dump', 'endpoint:list', 'schema:dump']);
+		$this->setName('apitte:route:dump');
 		$this->setDescription('Lists all endpoints registered in application');
 	}
 
