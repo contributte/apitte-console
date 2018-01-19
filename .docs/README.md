@@ -34,12 +34,11 @@ api:
         
 services:
 	Apitte\Console\Command\RouteDumpCommand:
-		tags: [kdyby.console.command]
 ```
 
 ## Usage
 
 Let say you would like to get list of all routes from CLI. The only thing you need to run is simple command. 
 
-`php bin/console route:dump`
+`php bin/console apitte:route:dump`
 
