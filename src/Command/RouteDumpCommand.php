@@ -40,10 +40,9 @@ final class RouteDumpCommand extends Command
 	}
 
 	/**
-	 * @param \Symfony\Component\Console\Input\InputInterface $input
-	 * @param \Symfony\Component\Console\Output\OutputInterface $output
-	 * @return int
-	 * @throws \ReflectionException
+	 * @param InputInterface $input
+	 * @param OutputInterface $output
+	 * @return void
 	 */
 	protected function execute(InputInterface $input, OutputInterface $output)
 	{
@@ -54,7 +53,7 @@ final class RouteDumpCommand extends Command
 		$table = new Table($output);
 		$table->setHeaders(self::TABLE_HEADER);
 
-		/** @var \Apitte\Core\Schema\Endpoint[][] $endpointsByHandler */
+		/** @var Endpoint[][] $endpointsByHandler */
 		$endpointsByHandler = [];
 
 		foreach ($this->schema->getEndpoints() as $endpoint) {
@@ -86,12 +85,10 @@ final class RouteDumpCommand extends Command
 		}
 
 		$table->render();
-
-		return 0;
 	}
 
 	/**
-	 * @param \Apitte\Core\Schema\EndpointParameter[] $parameters
+	 * @param EndpointParameter[] $parameters
 	 * @return string
 	 */
 	private function formatParameters(array $parameters)

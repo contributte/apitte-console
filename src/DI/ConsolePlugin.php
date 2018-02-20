@@ -6,11 +6,6 @@ use Apitte\Console\Command\RouteDumpCommand;
 use Apitte\Core\DI\Plugin\AbstractPlugin;
 use Apitte\Core\DI\Plugin\PluginCompiler;
 
-/**
- * Class ConsolePlugin
- *
- * @package Apitte\Console\DI
- */
 final class ConsolePlugin extends AbstractPlugin
 {
 
