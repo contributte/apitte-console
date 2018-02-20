@@ -1,6 +1,6 @@
 # Apitte\Console
 
-:pig: Console for Apitte [`Nette Framework`](https://github.com/nette/).
+:pill: Console for Apitte [`Nette Framework`](https://github.com/nette/).
 
 -----
 
