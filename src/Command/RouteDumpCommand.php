@@ -46,6 +46,14 @@ final class RouteDumpCommand extends Command
 	 */
 	protected function execute(InputInterface $input, OutputInterface $output)
 	{
+		$endpoints = $this->schema->getEndpoints();
+
+		if (!$endpoints) {
+			$output->writeln('No endpoints found');
+
+			return;
+		}
+
 		$io = new SymfonyStyle($input, $output);
 
 		$io->title('All registered endpoints');
@@ -55,8 +63,7 @@ final class RouteDumpCommand extends Command
 
 		/** @var Endpoint[][] $endpointsByHandler */
 		$endpointsByHandler = [];
-
-		foreach ($this->schema->getEndpoints() as $endpoint) {
+		foreach ($endpoints as $endpoint) {
 			$endpointsByHandler[$endpoint->getHandler()->getClass()][] = $endpoint;
 		}
 
