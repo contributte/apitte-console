@@ -33,12 +33,53 @@ api:
         Apitte\Console\DI\ConsolePlugin:
         
 services:
-	Apitte\Console\Command\RouteDumpCommand:
+    - Apitte\Console\Command\RouteDumpCommand
 ```
 
 ## Usage
 
-Let say you would like to get list of all routes from CLI. The only thing you need to run is simple command. 
+To execute prepared commands you will need Symfony Console Application. Don't waste your time to implement it
+and use [prepared solution](#console) from Contributte/Console.
 
-`php bin/console apitte:route:dump`
+With Contributte/Console you could call `bin/console` and see the magic.
 
+```
+php bin/console apitte:<>
+```
+
+| Command | Description |
+|---------|-------------|
+| apitte:route:dump | List all endpoints and their details |
+
+## Console
+
+Take a look at [Contributte/Console](https://github.com/contributte/console).
+
+Install it via composer.
+
+```
+composer require contributte/console
+```
+
+And setup your NEON.
+
+```
+extensions:
+    console: Contributte\Console\DI\ConsoleExtension
+```
+
+At least create `<project>/bin/console` and make it executable.
+
+```
+#!/usr/bin/env php
+<?php
+
+/** @var Nette\DI\Container $container */
+$container = require __DIR__ . '/../app/bootstrap.php';
+
+// Get application from DI container.
+$application = $container->getByType(Contributte\Console\Application::class);
+
+// Run application.
+exit($application->run());
+```
