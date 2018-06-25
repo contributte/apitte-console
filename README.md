@@ -26,7 +26,8 @@ composer require apitte/console
 
 | State       | Version      | Branch   | PHP      | Composer                                        |
 |-------------|--------------|----------|----------|-------------------------------------------------|
-| development | `^0.4.0`     | `master` | `>= 7.1` | `minimum-stability: dev`, `prefer-stable: true` |
+| development | `^0.5.0`     | `master` | `>= 7.1` | `minimum-stability: dev`, `prefer-stable: true` |
+| stable      | `^0.4.0`     | `master` | `>= 7.1` |                                                 |
 | stable      | `^0.3.0`     | `master` | `>= 5.6` |                                                 |
 
 ---
@@ -37,5 +38,30 @@ composer require apitte/console
 - [Installation - how to register a plugin](https://github.com/apitte/console/tree/master/.docs#installation)
 - [Configuration - all options](https://github.com/apitte/console/tree/master/.docs#configuration)
 - [Usage - controller showtime](https://github.com/apitte/console/tree/master/.docs#usage)
+
+## Maintainers
+
+<table>
+  <tbody>
+    <tr>
+      <td align="center">
+        <a href="https://github.com/f3l1x">
+            <img width="150" height="150" src="https://avatars2.githubusercontent.com/u/538058?v=3&s=150">
+        </a>
+        </br>
+        <a href="https://github.com/f3l1x">Milan Felix Šulc</a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <a href="https://github.com/mabar">
+            <img width="150" height="150" src="https://avatars0.githubusercontent.com/u/20974277?s=400&v=4">
+        </a>
+        </br>
+        <a href="https://github.com/mabar">Marek Bartoš</a>
+      </td>
+    </tr>
+  <tbody>
+</table>
 
 Thank you for testing, reporting and contributing.

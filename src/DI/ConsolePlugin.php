@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Apitte\Console\DI;
 
@@ -9,21 +9,15 @@ use Apitte\Core\DI\Plugin\PluginCompiler;
 final class ConsolePlugin extends AbstractPlugin
 {
 
-	const PLUGIN_NAME = 'console';
+	public const PLUGIN_NAME = 'console';
 
-	/**
-	 * @param PluginCompiler $compiler
-	 */
 	public function __construct(PluginCompiler $compiler)
 	{
 		parent::__construct($compiler);
 		$this->name = self::PLUGIN_NAME;
 	}
 
-	/**
-	 * @return void
-	 */
-	public function beforePluginCompile()
+	public function beforePluginCompile(): void
 	{
 		$builder = $this->getContainerBuilder();
 

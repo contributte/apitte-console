@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 /**
  * Test: Command/RouteDumpCommand
@@ -13,7 +13,7 @@ use Symfony\Component\Console\Tests\Fixtures\DummyOutput;
 use Tester\Assert;
 
 // No endpoints
-test(function () {
+test(function (): void {
 	$schema = new Schema();
 	$command = new RouteDumpCommand($schema);
 
