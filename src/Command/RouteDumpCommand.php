@@ -59,7 +59,7 @@ final class RouteDumpCommand extends Command
 		foreach ($endpointsByHandler as $handler) {
 
 			usort($handler, function (Endpoint $first, Endpoint $second) {
-				return strlen($first->getMask()) - strlen($second->getMask());
+				return strlen((string) $first->getMask()) - strlen((string) $second->getMask());
 			});
 
 			foreach ($handler as $endpoint) {
