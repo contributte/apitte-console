@@ -24,10 +24,10 @@ composer require apitte/console
 
 ## Version
 
-| State       | Version      | Branch   | PHP      |
-|-------------|--------------|----------|----------|
-| development | `dev-master` | `master` | `>= 5.6` |
-| stable      | `^0.1`       | `master` | `>= 5.6` |
+| State       | Version      | Branch   | PHP      | Composer                                        |
+|-------------|--------------|----------|----------|-------------------------------------------------|
+| development | `^0.4.0`     | `master` | `>= 7.1` | `minimum-stability: dev`, `prefer-stable: true` |
+| stable      | `^0.3.0`     | `master` | `>= 5.6` |                                                 |
 
 ---
 
