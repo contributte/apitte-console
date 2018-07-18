@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Apitte\Console\Command;
 
@@ -15,14 +15,11 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 final class RouteDumpCommand extends Command
 {
 
-	const TABLE_HEADER = ['Method', 'Path', 'Handler', 'Parameters'];
+	public const TABLE_HEADER = ['Method', 'Path', 'Handler', 'Parameters'];
 
 	/** @var Schema */
 	private $schema;
 
-	/**
-	 * @param Schema $schema
-	 */
 	public function __construct(Schema $schema)
 	{
 		parent::__construct();
@@ -30,25 +27,17 @@ final class RouteDumpCommand extends Command
 		$this->schema = $schema;
 	}
 
-	/**
-	 * @return void
-	 */
-	protected function configure()
+	protected function configure(): void
 	{
 		$this->setName('apitte:route:dump');
 		$this->setDescription('Lists all endpoints registered in application');
 	}
 
-	/**
-	 * @param InputInterface $input
-	 * @param OutputInterface $output
-	 * @return void
-	 */
-	protected function execute(InputInterface $input, OutputInterface $output)
+	protected function execute(InputInterface $input, OutputInterface $output): void
 	{
 		$endpoints = $this->schema->getEndpoints();
 
-		if (!$endpoints) {
+		if ($endpoints === []) {
 			$output->writeln('No endpoints found');
 
 			return;
@@ -70,7 +59,7 @@ final class RouteDumpCommand extends Command
 		foreach ($endpointsByHandler as $handler) {
 
 			usort($handler, function (Endpoint $first, Endpoint $second) {
-				return strlen($first->getMask()) - strlen($second->getMask());
+				return strlen((string) $first->getMask()) - strlen((string) $second->getMask());
 			});
 
 			foreach ($handler as $endpoint) {
@@ -96,9 +85,8 @@ final class RouteDumpCommand extends Command
 
 	/**
 	 * @param EndpointParameter[] $parameters
-	 * @return string
 	 */
-	private function formatParameters(array $parameters)
+	private function formatParameters(array $parameters): string
 	{
 		$params = array_map(function (EndpointParameter $parameter) {
 			return sprintf('%s (%s)', $parameter->getName(), $parameter->getType());
