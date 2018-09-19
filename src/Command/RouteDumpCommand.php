@@ -17,6 +17,9 @@ final class RouteDumpCommand extends Command
 
 	public const TABLE_HEADER = ['Method', 'Path', 'Handler', 'Parameters'];
 
+	/** @var string */
+	protected static $defaultName = 'apitte:route:dump';
+
 	/** @var Schema */
 	private $schema;
 
@@ -29,7 +32,7 @@ final class RouteDumpCommand extends Command
 
 	protected function configure(): void
 	{
-		$this->setName('apitte:route:dump');
+		$this->setName(self::$defaultName);
 		$this->setDescription('Lists all endpoints registered in application');
 	}
 
