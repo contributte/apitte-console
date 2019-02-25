@@ -36,14 +36,14 @@ final class RouteDumpCommand extends Command
 		$this->setDescription('Lists all endpoints registered in application');
 	}
 
-	protected function execute(InputInterface $input, OutputInterface $output): void
+	protected function execute(InputInterface $input, OutputInterface $output): ?int
 	{
 		$endpoints = $this->schema->getEndpoints();
 
 		if ($endpoints === []) {
 			$output->writeln('No endpoints found');
 
-			return;
+			return 0;
 		}
 
 		$io = new SymfonyStyle($input, $output);
@@ -84,6 +84,8 @@ final class RouteDumpCommand extends Command
 		}
 
 		$table->render();
+
+		return 0;
 	}
 
 	/**
