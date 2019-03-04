@@ -1,23 +1,16 @@
-# Apitte\Console
+# Apitte Console
 
-## Content
+Console commands for [Apitte](https://github.com/apitte/core).
 
-- [Installation - how to register a plugin](#installation)
-- [Configuration - all options](#configuration)
-- [Usage - controller showtime](#usage)
+## Setup
 
-## Installation
+First of all, setup [core](https://github.com/apitte/core) package.
 
-This plugin requires [Apitte/Core](https://github.com/apitte/core) library.
+Install and register console plugin
 
-At first you have to register the main extension.
-
-```yaml
-extensions:
-    api: Apitte\Core\DI\ApiExtension
+```bash
+composer require apitte/console
 ```
-
-Secondly, add the `ConsolePlugin` plugin.
 
 ```yaml
 api:
@@ -25,61 +18,22 @@ api:
         Apitte\Console\DI\ConsolePlugin:
 ```
 
-## Configuration
+You also need setup an integration of [symfony/console](https://symfony.com/doc/current/components/console.html), try [contributte/console](https://github.com/contributte/console/)
+
+If you use [kdyby/console](https://github.com/Kdyby/Console) then make sure you add required tag to registered commands.
 
 ```yaml
-api:
-    plugins: 
-        Apitte\Console\DI\ConsolePlugin:
-        
-services:
-    - Apitte\Console\Command\RouteDumpCommand
+decorator:
+    Symfony\Component\Console\Command\Command:
+        tags: [kdyby.console.command]
 ```
 
-## Usage
+## Commands
 
-To execute prepared commands you will need Symfony Console Application. Don't waste your time to implement it
-and use [prepared solution](#console) from Contributte/Console.
+### Route dump
 
-With Contributte/Console you could call `bin/console` and see the magic.
+List all endpoints and their details
 
-```
-php bin/console apitte:<>
-```
-
-| Command | Description |
-|---------|-------------|
-| apitte:route:dump | List all endpoints and their details |
-
-## Console
-
-Take a look at [Contributte/Console](https://github.com/contributte/console).
-
-Install it via composer.
-
-```
-composer require contributte/console
-```
-
-And setup your NEON.
-
-```
-extensions:
-    console: Contributte\Console\DI\ConsoleExtension
-```
-
-At least create `<project>/bin/console` and make it executable.
-
-```
-#!/usr/bin/env php
-<?php
-
-/** @var Nette\DI\Container $container */
-$container = require __DIR__ . '/../app/bootstrap.php';
-
-// Get application from DI container.
-$application = $container->getByType(Contributte\Console\Application::class);
-
-// Run application.
-exit($application->run());
+```bash
+php bin/console apitte:route:dump
 ```

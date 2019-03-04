@@ -1,8 +1,6 @@
-# Apitte\Console
+# Apitte Console
 
-:pill: Console for Apitte [`Nette Framework`](https://github.com/nette/).
-
------
+Console commands for [Apitte](https://github.com/apitte/core).
 
 [![Build Status](https://img.shields.io/travis/apitte/console.svg?style=flat-square)](https://travis-ci.org/apitte/console)
 [![Code coverage](https://img.shields.io/coveralls/apitte/console.svg?style=flat-square)](https://coveralls.io/r/apitte/console)
@@ -16,12 +14,6 @@
 
 [![Join the chat](https://img.shields.io/gitter/room/apitte/apitte.svg?style=flat-square)](http://bit.ly/apittegitter)
 
-## Install
-
-```
-composer require apitte/console
-```
-
 ## Version
 
 | State       | Version      | Branch   | PHP      | Composer                                        |
@@ -30,14 +22,10 @@ composer require apitte/console
 | stable      | `^0.4.0`     | `master` | `>= 7.1` |                                                 |
 | stable      | `^0.3.0`     | `master` | `>= 5.6` |                                                 |
 
----
-
-
 ## Documentation
 
-- [Installation - how to register a plugin](https://github.com/apitte/console/tree/master/.docs#installation)
-- [Configuration - all options](https://github.com/apitte/console/tree/master/.docs#configuration)
-- [Usage - controller showtime](https://github.com/apitte/console/tree/master/.docs#usage)
+- [Setup](.docs/README.md#setup)
+- [Commands](.docs/README.md#commands)
 
 ## Maintainers
 
@@ -62,4 +50,8 @@ composer require apitte/console
   </tbody>
 </table>
 
-Thank you for testing, reporting and contributing.
+## Sponsoring
+
+<a href="https://github.com/tlapnet"><img  width="200" src="https://cdn.rawgit.com/f3l1x/xsource/2463efb7/assets/tlapdev.png"></a>
+
+The development is sponsored by [Tlapnet](https://www.tlapnet.cz)
