@@ -2,6 +2,11 @@
 
 Console commands for [Apitte](https://github.com/apitte/core).
 
+## Content
+
+- [Setup](#setup)
+- [Commands](#commands)
+
 ## Setup
 
 First of all, setup [core](https://github.com/apitte/core) package.
