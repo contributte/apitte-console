@@ -10,7 +10,7 @@
   "license": "MIT",
   "homepage": "https://github.com/apitte/console",
   "require": {
-    "php": ">= 7.1",
+    "php": "^7.2",
     "apitte/core": "^0.6.0",
     "symfony/console": "^4.1.1"
   },
@@ -19,6 +19,7 @@
     "nette/di": "~2.4.15",
     "ninjify/nunjuck": "^0.2.0",
     "ninjify/qa": "^0.8.0",
+    "phpstan/extension-installer": "^1.0",
     "phpstan/phpstan-deprecation-rules": "^0.11",
     "phpstan/phpstan-nette": "^0.11",
     "phpstan/phpstan-shim": "^0.11",
