@@ -3,18 +3,14 @@
 namespace Apitte\Console\DI;
 
 use Apitte\Console\Command\RouteDumpCommand;
-use Apitte\Core\DI\Plugin\AbstractPlugin;
-use Apitte\Core\DI\Plugin\PluginCompiler;
+use Apitte\Core\DI\Plugin\Plugin;
 
-final class ConsolePlugin extends AbstractPlugin
+final class ConsolePlugin extends Plugin
 {
 
-	public const PLUGIN_NAME = 'console';
-
-	public function __construct(PluginCompiler $compiler)
+	public static function getName(): string
 	{
-		parent::__construct($compiler);
-		$this->name = self::PLUGIN_NAME;
+		return 'console';
 	}
 
 	public function beforePluginCompile(): void
