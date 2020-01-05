@@ -36,7 +36,7 @@ final class RouteDumpCommand extends Command
 		$this->setDescription('Lists all endpoints registered in application');
 	}
 
-	protected function execute(InputInterface $input, OutputInterface $output): ?int
+	protected function execute(InputInterface $input, OutputInterface $output): int
 	{
 		$endpoints = $this->schema->getEndpoints();
 

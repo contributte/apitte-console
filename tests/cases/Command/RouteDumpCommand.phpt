@@ -12,7 +12,7 @@ use Apitte\Core\Schema\EndpointHandler;
 use Apitte\Core\Schema\EndpointParameter;
 use Apitte\Core\Schema\Schema;
 use Symfony\Component\Console\Input\ArgvInput;
-use Symfony\Component\Console\Tests\Fixtures\DummyOutput;
+use Symfony\Component\Console\Output\BufferedOutput;
 use Tester\Assert;
 
 // No endpoints
@@ -21,7 +21,7 @@ test(function (): void {
 	$command = new RouteDumpCommand($schema);
 
 	$input = new ArgvInput();
-	$output = new DummyOutput();
+	$output = new BufferedOutput();
 
 	$command->run($input, $output);
 
@@ -54,7 +54,7 @@ test(function (): void {
 	$command = new RouteDumpCommand($schema);
 
 	$input = new ArgvInput();
-	$output = new DummyOutput();
+	$output = new BufferedOutput();
 
 	$command->run($input, $output);
 
