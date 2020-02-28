@@ -60,7 +60,6 @@ final class RouteDumpCommand extends Command
 		}
 
 		foreach ($endpointsByHandler as $handler) {
-
 			foreach ($handler as $endpoint) {
 				$table->addRow([
 					implode('|', $endpoint->getMethods()),
@@ -89,7 +88,7 @@ final class RouteDumpCommand extends Command
 	 */
 	private function formatParameters(array $parameters): string
 	{
-		$params = array_map(function (EndpointParameter $parameter) {
+		$params = array_map(function (EndpointParameter $parameter): string {
 			return sprintf('%s (%s)', $parameter->getName(), $parameter->getType());
 		}, $parameters);
 
