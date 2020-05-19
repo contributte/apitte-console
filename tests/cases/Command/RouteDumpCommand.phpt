@@ -58,19 +58,18 @@ test(function (): void {
 
 	$command->run($input, $output);
 
-	$result = <<<EOD
-All registered endpoints
-========================
+	$result = trim(implode("\n", array_map(static function (string $line): string {
+		return rtrim($line);
+	}, explode("\n", $output->fetch()))));
 
-+--------+---------------+-------------------+-------------+
-| Method | Path          | Handler           | Parameters  |
-+--------+---------------+-------------------+-------------+
-| GET    | /example/foo  | class1::method1() |             |
-| GET    | /example/{id} | class1::method2() | id (string) |
-+--------+---------------+-------------------+-------------+
-| GET    | /lorem-ipsum  | class2::method1() |             |
-+--------+---------------+-------------------+-------------+
+	$expected = <<<EOD
+Method Path          Handler         Parameters
+
+ GET    /example/foo  class1  method1
+ GET    /example/{id}         method2 path: id
+ ────── ───────────── ─────── ─────── ──────────
+ GET    /lorem-ipsum  class2  method1
 EOD;
 
-	Assert::equal($result, trim($output->fetch()));
+	Assert::equal($expected, $result);
 });

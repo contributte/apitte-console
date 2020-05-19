@@ -8,14 +8,14 @@ use Apitte\Core\Schema\Schema;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Helper\TableSeparator;
+use Symfony\Component\Console\Helper\TableStyle;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Style\SymfonyStyle;
 
 final class RouteDumpCommand extends Command
 {
 
-	public const TABLE_HEADER = ['Method', 'Path', 'Handler', 'Parameters'];
+	private const TABLE_HEADER = ['Method', 'Path', 'Handler', ' ', 'Parameters'];
 
 	/** @var string */
 	protected static $defaultName = 'apitte:route:dump';
@@ -46,12 +46,16 @@ final class RouteDumpCommand extends Command
 			return 0;
 		}
 
-		$io = new SymfonyStyle($input, $output);
-
-		$io->title('All registered endpoints');
-
 		$table = new Table($output);
 		$table->setHeaders(self::TABLE_HEADER);
+
+		$style = new TableStyle();
+		$style
+			->setDefaultCrossingChar(' ')
+			->setVerticalBorderChars(' ')
+			->setHorizontalBorderChars('', '─')
+			->setCellRowContentFormat('%s');
+		$table->setStyle($style);
 
 		/** @var Endpoint[][] $endpointsByHandler */
 		$endpointsByHandler = [];
@@ -59,21 +63,32 @@ final class RouteDumpCommand extends Command
 			$endpointsByHandler[$endpoint->getHandler()->getClass()][] = $endpoint;
 		}
 
-		foreach ($endpointsByHandler as $handler) {
-			foreach ($handler as $endpoint) {
+		foreach ($endpointsByHandler as $groupedEndpoints) {
+			$previousClass = null;
+
+			foreach ($groupedEndpoints as $endpoint) {
+				$handler = $endpoint->getHandler();
+				$currentClass = $class = $handler->getClass();
+
+				if ($previousClass === $class) {
+					$currentClass = '';
+				}
+
 				$table->addRow([
-					implode('|', $endpoint->getMethods()),
-					$endpoint->getMask(),
 					sprintf(
-						'%s::%s()',
-						$endpoint->getHandler()->getClass(),
-						$endpoint->getHandler()->getMethod()
+						'<fg=cyan>%s</>',
+						implode('|', $endpoint->getMethods())
 					),
+					$endpoint->getMask(),
+					$currentClass,
+					$handler->getMethod(),
 					$this->formatParameters($endpoint->getParameters()),
 				]);
+
+				$previousClass = $class;
 			}
 
-			if ($handler !== end($endpointsByHandler)) {
+			if ($groupedEndpoints !== end($endpointsByHandler)) {
 				$table->addRow(new TableSeparator());
 			}
 		}
@@ -88,11 +103,24 @@ final class RouteDumpCommand extends Command
 	 */
 	private function formatParameters(array $parameters): string
 	{
-		$params = array_map(function (EndpointParameter $parameter): string {
-			return sprintf('%s (%s)', $parameter->getName(), $parameter->getType());
-		}, $parameters);
+		$paramsByIn = [];
 
-		return implode(', ', $params);
+		foreach ($parameters as $parameter) {
+			$paramsByIn[$parameter->getIn()][] = $parameter->getName();
+		}
+
+		ksort($paramsByIn);
+
+		$result = '';
+
+		foreach ($paramsByIn as $in => $params) {
+			$result .= sprintf('<fg=cyan>%s</>', $in) . ': ' . implode(', ', $params);
+			if ($params !== end($paramsByIn)) {
+				$result .= ' | ';
+			}
+		}
+
+		return $result;
 	}
 
 }
