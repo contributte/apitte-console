@@ -10,7 +10,7 @@
   "license": "MIT",
   "homepage": "https://github.com/apitte/console",
   "require": {
-    "php": "^7.2",
+    "php": ">=7.2",
     "apitte/core": "^0.7.0",
     "symfony/console": "^4.1.1|^5.0.0"
   },
