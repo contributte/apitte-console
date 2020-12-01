@@ -11,7 +11,7 @@
   "homepage": "https://github.com/apitte/console",
   "require": {
     "php": ">=7.2",
-    "apitte/core": "^0.7.0",
+    "apitte/core": "~0.7",
     "symfony/console": "^4.1.1|^5.0.0"
   },
   "require-dev": {
@@ -37,7 +37,7 @@
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "0.7.x-dev"
+      "dev-master": "0.8.x-dev"
     }
   }
 }
