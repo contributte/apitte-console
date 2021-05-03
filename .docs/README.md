@@ -17,9 +17,9 @@ Install and register console plugin
 composer require apitte/console
 ```
 
-```yaml
+```neon
 api:
-    plugins: 
+    plugins:
         Apitte\Console\DI\ConsolePlugin:
 ```
 
@@ -27,7 +27,7 @@ You also need setup an integration of [symfony/console](https://symfony.com/doc/
 
 If you use [kdyby/console](https://github.com/Kdyby/Console) then make sure you add required tag to registered commands.
 
-```yaml
+```neon
 decorator:
     Symfony\Component\Console\Command\Command:
         tags: [kdyby.console.command]
