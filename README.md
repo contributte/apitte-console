@@ -1,4 +1,4 @@
-![](https://heatbadger.now.sh/github/readme/apitte/console/)
+![](https://heatbadger.now.sh/github/readme/contributte/apitte-console/)
 
 <p align=center>
   <a href="https://github.com/apitte/console/actions"><img src="https://badgen.net/github/checks/apitte/console/master?cache=300"></a>
@@ -8,7 +8,7 @@
 </p>
 <p align=center>
   <a href="https://packagist.org/packages/apitte/console"><img src="https://badgen.net/packagist/php/apitte/console"></a>
-  <a href="https://github.com/apitte/console"><img src="https://badgen.net/github/license/apitte/console"></a>
+  <a href="https://github.com/contributte/apitte-console"><img src="https://badgen.net/github/license/contributte/apitte-console"></a>
   <a href="https://bit.ly/ctteg"><img src="https://badgen.net/badge/support/gitter/cyan"></a>
   <a href="https://bit.ly/cttfo"><img src="https://badgen.net/badge/support/forum/yellow"></a>
   <a href="https://contributte.org/partners.html"><img src="https://badgen.net/badge/become/a%20patron/F96854"></a>
